@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cosmetics Store</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Glow & Glamour</h1>
+    <div class="cart">
+      🛒 Cart: <span id="cart-count">0</span>
+    </div>
+  </header>
+
+  <main class="product-grid">
+    <div class="product-card">
+      <img src="https://via.placeholder.com/200x200?text=Lipstick" alt="Lipstick">
+      <h3>Matte Lipstick</h3>
+      <p>$14.99</p>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="https://via.placeholder.com/200x200?text=Foundation" alt="Foundation">
+      <h3>Liquid Foundation</h3>
+      <p>$24.99</p>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="https://via.placeholder.com/200x200?text=Mascara" alt="Mascara">
+      <h3>Volumizing Mascara</h3>
+      <p>$18.00</p>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="https://via.placeholder.com/200x200?text=Blush" alt="Blush">
+      <h3>Peach Blush</h3>
+      <p>$12.50</p>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
+/* Reset basic styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fffafc;
+  color: #333;
+  padding: 20px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+h1 {
+  color: #d63384;
+}
+
+.cart {
+  font-size: 18px;
+  background-color: #ffe6f0;
+  padding: 8px 16px;
+  border-radius: 20px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.product-card {
+  background: white;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  text-align: center;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  transition: transform 0.2s;
+}
+
+.product-card:hover {
+  transform: scale(1.02);
+}
+
+.product-card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.product-card h3 {
+  margin: 10px 0 5px;
+  font-size: 18px;
+  color: #333;
+}
+
+.product-card p {
+  color: #d63384;
+  font-weight: bold;
+}
+
+button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #d63384;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #b0266b;
+}
+let cartCount = 0;
+
+function addToCart() {
+  cartCount++;
+  document.getElementById('cart-count').textContent = cartCount;
+}
